@@ -1,0 +1,132 @@
+.box {
+  	width: 500px;
+  	height: 100px;
+  	border: 3px solid black;
+  	display: flex;
+  	justify-content: space-around;
+}
+
+.box div {
+  	width: 50px;
+  	height: 50px;
+  	border-radius: 50%;
+  	align-self: center;
+  	transform: rotate(45deg) skew(-15deg, -15deg);
+  	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+  	transition: 0.7s;
+ 	position: relative;
+}
+
+.box > div > div {
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	transform: skew(0, 0);
+}
+
+.layer1 {
+ 	opacity: 0.8;
+}
+
+.layer2 {
+ 	opacity: 0.6;
+}
+
+.layer3 {
+	opacity: 0.4;
+}
+
+.blue {
+ 	background: black;
+
+}
+
+.red {
+  	background: gray;
+}
+.green {
+  	background: silver;
+}
+.purple {
+  	background: gold;
+}
+
+.box > div:hover {
+  	transform: rotate(45deg) skew(-15deg, -15deg) translate(-40px, -40px);
+}
+
+.box > div:hover > div.layer1 {
+  	transform: translate(10px, 10px);
+}
+
+.box > div:hover > div.layer2 {
+  	transform: translate(20px, 20px);
+}
+
+.box > div:hover > div.layer3 {
+  	transform: translate(30px, 30px);
+}
+
+span {
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 3px solid black;
+  border-radius: 100%;
+}
+
+.a, .b, .c {
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.a {
+  animation-duration: 1500ms;
+}
+
+.b {
+  animation-duration: 4500ms;
+  transform-origin: 63% 63%;
+  width: 40px;
+  height: 40px;
+  transition: all;
+
+  animation-name: stop;
+}
+.c {
+  animation-duration: 9000ms;
+  transform-origin: 74% 74%;
+  width: 20px;
+  height: 20px;
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.center {
+  position: absolute;
+  top: 24%;
+  margin-top: -33px;
+  margin-left: -33px;
+}
+
+@keyframes stop {
+  0% {
+    transform: scale(1,1);
+  }
+  50% {
+    transform: scale(2,2);
+  }
+  100% {
+    transform: scale(1,1);
+  }
+}
